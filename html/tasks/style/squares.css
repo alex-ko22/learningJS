@@ -1,0 +1,72 @@
+.row-squares {
+    display:flex;
+}
+
+.square {
+    background-color:lightblue;
+    width:60px;
+    height:60px;
+    margin:5px;
+}
+
+
+.square:nth-child(2n+1) {
+    background-color:black;
+}
+
+.square:hover {
+    background-color:orange;
+}
+
+div[class^="battery"] {
+    margin:10px;
+    width:100px;
+    height:30px;
+    border:3px solid black;
+    position:relative;
+    /*box-sizing: border-box;*/
+}
+div[class^="battery"]:after {
+    content:"";
+    height:15px;
+    width:10px;
+    background-color:black;
+    display:inline-block;
+    position:absolute;
+    left:100%;
+    transform: translateY(50%)
+}
+
+.battery-one:before {
+    content:"";
+    height:30px;
+    width:30px;
+    background-color:red;
+    display:inline-block;
+    position:relative;
+}
+
+.battery-two:before {
+    content:"";
+    height:30px;
+    width:70px;
+    background-color:yellow;
+    display:inline-block;
+}
+
+.battery-three:before {
+    content:"";
+    height:30px;
+    width:100px;
+    background-color:green;
+    display:inline-block;
+}
+
+.battery-one:hover {
+    background-color:red;
+    
+}
+
+.battery-two:hover {
+    background-color:yellow;
+}

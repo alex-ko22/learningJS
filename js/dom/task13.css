@@ -1,0 +1,10 @@
+.table-three td {
+    border: 1px solid black;
+    padding:5px;
+    
+}
+
+.table-three {
+    border-collapse: collapse;
+    margin:20px;
+}
