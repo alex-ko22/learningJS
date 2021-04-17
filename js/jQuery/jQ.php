@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1> <button class = "button1">Click me!</button></h1>  
+    <div id="welcome"></div>
+    
     <script src="./jQ.js"></script>
 </body>
 </html>
