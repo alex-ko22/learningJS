@@ -31,6 +31,7 @@ function prepareCoffee () {
     if (newBalance < 0)     {
         message.innerText = "Not enough money!";
         balanceInput.style.borderColor = "red";
+        return;
     } else  {
         preparing = true;
         balance = newBalance;
@@ -48,9 +49,13 @@ function prepareCoffee () {
             counter++;
             progressBar.style.width = counter + "%";
             imgBar.style.opacity = counter + "%";
-            if (counter >= 100) clearInterval(progressGo);   
-        }, 100);
-    }
+            if (counter >= 100) {
+                clearInterval(progressGo);
+                message.innerText = ("Ready!");
+                return;
+            }
+        }, 100);       
+    }    
 }
 
 imgBar.onclick = function () {
