@@ -65,4 +65,45 @@ imgBar.onclick = function () {
     preparing = false;
 }
 
+let btnChange = document.querySelector(".change-btn");
+let nominals = [10,5,2,1];
+let coins = [0,0,0,0];
+let imgs = ["img/10rub.png","img/5rub.png","img/2rub.png","img/1rub.png"];
 
+btnChange.onclick = function () {
+    
+    balance = balanceInput.value;
+    calcCoins(balance);
+    takeChange();
+    balanceInput.value = "0";
+}
+
+function calcCoins (balance) {
+    for ( let i = 0; i < nominals.length; i++ ) {
+        if ( balance >= nominals[i] ) {
+            coins[i] = Math.floor( balance / nominals[i] );
+            balance = balance % nominals[i];
+            calcCoins(balance);
+        }
+    }
+}
+
+function takeChange() {
+    for ( let i = 0; i < coins.length; i++ ) {
+        for ( let j = 0; j < coins[i] ; j++ ) {
+            drawCoins(i);
+        }
+    }
+}
+
+const container = document.querySelector(".coffee-change");
+const containerCoords = container.getBoundingClientRect();
+
+function drawCoins(i) {
+    const img =  document.createElement("img");
+    img.setAttribute("src", imgs[i]);
+    img.className = "coin-img";
+    img.style.top = Math.floor(Math.random() * (containerCoords.height - 50)) + "px";
+    img.style.left = Math.floor(Math.random() * (containerCoords.width - 50)) + "px";
+    container.append(img);
+}
