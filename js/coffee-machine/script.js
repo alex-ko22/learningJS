@@ -107,3 +107,46 @@ function drawCoins(i) {
     img.style.left = Math.floor(Math.random() * (containerCoords.width - 50)) + "px";
     container.append(img);
 }
+
+const banknotes = document.querySelectorAll(".banknote");
+
+for ( let banknote of banknotes) {
+    banknote.onmousedown = dragBanknote;
+}
+
+function dragBanknote(event) {
+    event.preventDefault(); 
+    const banknote = this;
+    
+    const banknoteCoords = banknote.getBoundingClientRect();
+   
+    banknote.style.position = "absolute";
+    // banknote.style.transform = "rotate(90deg)";
+    let shiftX = event.clientX - banknoteCoords.left;
+    let shiftY = event.clientY - banknoteCoords.top;
+    
+
+    window.onmousemove = function(event) {
+        banknote.style.top = event.clientY - shiftY + "px";
+        banknote.style.left = event.clientX - shiftX + "px";
+    }
+
+    banknote.onmouseup = function(event) {
+        window.onmousemove = null;
+        banknote.onmouseup = null;
+        banknote.hidden = true; 
+        const elementBelow = document.elementFromPoint(event.clientX, event.clientY); 
+        banknote.hidden = false; 
+        
+        if ( elementBelow.classList.contains("receiver") ) {
+            balanceInput.value = Number(balanceInput.value) + Number(banknote.getAttribute("value"));
+          
+            banknote.style.transform = "rotate(90deg)";
+           
+            let removeB = function() {
+                banknote.remove();     
+            }
+            setTimeout(removeB,1000);        
+        }
+    }
+}

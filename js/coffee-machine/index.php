@@ -57,7 +57,7 @@
                 </div>
               </div>
               <div class="coffee-atm mt-2">
-                <img src="img/bill_acc.png" alt="">
+                <img src="img/bill_acc.png" alt="" class="receiver">
               </div>
               <button class="btn btn-block btn-primary mt-2 change-btn">Получить сдачу</button>
               <div class="coffee-change mt-2"></div>
@@ -66,9 +66,9 @@
         </div>
       </div>
       <div class="row wallet mt-2">
-        <img src="img/50rub.jpg" alt="" value="50">
-        <img src="img/100rub.jpg" alt="" value="100">
-        <img src="img/500rub.jpg" alt="" value="500">
+        <img src="img/50rub.jpg" alt="" value="50" class="banknote">
+        <img src="img/100rub.jpg" alt="" value="100" class="banknote">
+        <img src="img/500rub.jpg" alt="" value="500" class="banknote">
       </div>
     </div>
 

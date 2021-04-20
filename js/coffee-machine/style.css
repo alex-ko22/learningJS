@@ -88,3 +88,9 @@
 	position: absolute;
 	user-select: none;
 }
+
+.banknote {
+	/* transform: rotate(0); */
+	opacity: 100%; 
+	transition: transform 3s ease, opasity 10s ease;
+}

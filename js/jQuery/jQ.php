@@ -3,71 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>jQ</title>
-    <!-- <script src="./jquery.js"></script> -->
+    <script src="./jquery.js"></script>
     <style>
-        .modalDialog {
-            position: fixed;
-            font-family: Arial, Helvetica, sans-serif;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: rgba(0,0,0,0.8);
-            z-index: 99999;
-            -webkit-transition: opacity 400ms ease-in;
-            -moz-transition: opacity 400ms ease-in;
-            transition: opacity 400ms ease-in;
+        .modal-window {
+            left: 0px;
+            top: 0px;
+            z-index: 1000;
+            background-color: lightgrey;
+            opacity: 90%; 
+            width: 100%;
+            height: 100%;
+            position: absolute; 
+            
+        }
+        
+        .d-none {
             display: none;
-            pointer-events: none;
         }
-        .modalDialog:target {
-            display: block;
-            pointer-events: auto;
-        }
-        .modalDialog > div {
-            width: 400px;
+        .window {
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+            background-color: lightgreen;
             position: relative;
-            margin: 10% auto;
-            padding: 5px 20px 13px 20px;
-            border-radius: 10px;
-            background: #fff;
-            background: -moz-linear-gradient(#fff, #999);
-            background: -webkit-linear-gradient(#fff, #999);
-            background: -o-linear-gradient(#fff, #999);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%); 
+            opacity: 10%;            
         }
-        .close {
-            background: #606061;
-            color: #FFFFFF;
-            line-height: 25px;
-            position: absolute;
-            right: -12px;
-            text-align: center;
-            top: -10px;
-            width: 24px;
-            text-decoration: none;
-            font-weight: bold;
-            -webkit-border-radius: 12px;
-            -moz-border-radius: 12px;
-            border-radius: 12px;
-            -moz-box-shadow: 1px 1px 3px #000;
-            -webkit-box-shadow: 1px 1px 3px #000;
-            box-shadow: 1px 1px 3px #000;
+        .btn {
+            width: 100px;
+            height: 40px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%); 
         }
-
-        .close:hover { background: #00d9ff; }
 
     </style>
     
 </head>
 <body>
-    <a href="#openModal">Открыть модальное окно</a>
+    <a href="#modal" id="link">Открыть модальное окно</a>
     
-	<div id="openModal" class="modalDialog">
-        <div>
-            <a href="#close" title="Закрыть" class="close">X</a>
-            <h2>Modal window</h2>
+	<div id="modal" class="modal-window d-none">
+        <div class="window">
+            <button class="btn" name="Close">Close</button>
         </div>
-    <div>  
+    <div> 
+
     <script src="./jQ.js"></script>
 </body>
 </html>
