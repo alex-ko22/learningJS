@@ -1,11 +1,10 @@
 "use strict";
 
-let modalWindow = document.getElementById("modal");
-
-
 $( "#link" ).on( "click", function() {
-   modalWindow.classList.remove("d-none");
-   $(".window").fadeIn(1000);
-  
+   $( "#modal").fadeIn(2000);
   });
+
+$( "#btn" ).on( "click", function () {
+   $("#modal").fadeOut(2000);
+})
 

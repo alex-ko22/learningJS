@@ -5,7 +5,7 @@
     <title>jQ</title>
     <script src="./jquery.js"></script>
     <style>
-        .modal-window {
+        #modal {
             left: 0px;
             top: 0px;
             z-index: 1000;
@@ -20,7 +20,7 @@
         .d-none {
             display: none;
         }
-        .window {
+        #window {
             width: 200px;
             height: 100px;
             border: 2px solid black;
@@ -29,9 +29,9 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%); 
-            opacity: 10%;            
+                        
         }
-        .btn {
+        #btn {
             width: 100px;
             height: 40px;
             position: relative;
@@ -46,9 +46,9 @@
 <body>
     <a href="#modal" id="link">Открыть модальное окно</a>
     
-	<div id="modal" class="modal-window d-none">
-        <div class="window">
-            <button class="btn" name="Close">Close</button>
+	<div id="modal" class="d-none">
+        <div id="window">
+            <button id="btn" name="Close">Close</button>
         </div>
     <div> 
 
